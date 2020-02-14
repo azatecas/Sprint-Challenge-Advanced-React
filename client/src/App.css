@@ -21,3 +21,13 @@
   background-color: black;
   color: white;
 }
+
+.pagination{
+  display:flex;
+  list-style: none;
+  justify-content: center;
+}
+
+.pagination li{
+  margin: 0 10px;
+}

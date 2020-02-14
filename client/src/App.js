@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios'
 import CardContainer from './components/CardContainer';
 import NavBar from './components/NavBar';
+import usePagination from './hooks/Pagination';
 
 class App extends React.Component {
   constructor(){
@@ -30,6 +31,7 @@ class App extends React.Component {
     return (
     <div className="App">
       <NavBar/>
+      
       <CardContainer players={this.state.players}/>      
     </div>
     );
