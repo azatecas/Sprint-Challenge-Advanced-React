@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import App from './App';
 import "@testing-library/jest-dom/extend-expect";
 import CardContainer from './components/CardContainer';
@@ -34,6 +34,21 @@ test('button title correct', () => {
   //assert
   
   expect(btn).toBeInTheDocument();  
+
+});
+
+test('button does something', () => {
+  //arrange
+  const { queryByText, queryByTitle } = render(<App/>);
+  //act
+  
+  
+  const btn = queryByText(/secret mode/i);
+  //assert
+  
+  fireEvent.click(btn);
+
+  expect(document.body.classList.contains('.dark-mode')).toBeTruthy;
 
 });
 
