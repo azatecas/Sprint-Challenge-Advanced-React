@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { render } from '@testing-library/react';
 import App from './App';
 import "@testing-library/jest-dom/extend-expect";
+import CardContainer from './components/CardContainer';
 
 // it('renders without crashing', () => {
 //   const div = document.createElement('div');
@@ -12,7 +13,7 @@ import "@testing-library/jest-dom/extend-expect";
 
 test('Nav title renders correctly', () => {
   //arrange
-  const { queryByText, queryByTitle } = render(<App/>);
+  const { queryByText } = render(<App/>);
   //act
   const nav = queryByText(/Lambda Sprint Challenge/i);
   const btn = queryByText(/secret mode/i)
@@ -29,24 +30,21 @@ test('button title correct', () => {
   const { queryByText, queryByTitle } = render(<App/>);
   //act
   
-  const btn = queryByText(/secret mode/i)
+  const btn = queryByText(/secret mode/i);
   //assert
   
-  expect(btn).toBeTruthy();  
+  expect(btn).toBeInTheDocument();  
 
 });
 
-test('onePlayers renders correctly', () => {
-  //arrange
-  const { queryByText, queryByTitle, queryAllByText } = render(<App/>);
-  //act
+// test('onePlayers renders correctly', () => {
+//   //arrange
+//   const { getByText, getAllByDisplayValue } = render(<App />);
+//   //act  
+//   const player = getAllByDisplayValue(/Alex Morgan/i);
+//   //assert
   
-  const player = queryByText(/Megan Rapinoe/i)
-
-
-  //assert
-  
-  expect(player).toBeInTheDocument();
+//   expect(player).toBeInTheDocument();
   
 
-});
+// });
