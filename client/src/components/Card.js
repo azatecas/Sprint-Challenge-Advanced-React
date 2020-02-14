@@ -5,7 +5,7 @@ const Card = ({players}) => {
     const { name, country, searches } = players;
 
     return(
-        <div>
+        <div className="player-card">
             <h1>{ name }</h1>
             <h3>{ country }</h3>
             <h3>{ searches }</h3>

@@ -4,9 +4,11 @@ import Card from './Card';
 const CardContainer = ({players}) => {
     // console.log('this players',players);
     return (
-        players.map((item, index) => (
-            <Card players={item} key={item.id}/>
-        ))
+        <div className="card-container">
+            {players.map((item, index) => (
+                <Card players={item} key={item.id}/>
+            ))}
+        </div>
         
     )
 
