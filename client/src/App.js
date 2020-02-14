@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios'
 import CardContainer from './components/CardContainer';
 import NavBar from './components/NavBar';
-import usePagination from './hooks/Pagination';
+// import usePagination from './hooks/Pagination';
 
 class App extends React.Component {
   constructor(){
@@ -16,13 +16,12 @@ class App extends React.Component {
   componentDidMount() {
     axios
       .get(`http://localhost:5000/api/players`)
-      .then(res => {
-        console.log('this is res', res.data)
+      .then(res => {        
         this.setState({
           players: res.data
         })
       })
-      .catch(error => console.log('axios error', error))
+      .catch(error => console.log('Get error in axios', error))
   }
 
 

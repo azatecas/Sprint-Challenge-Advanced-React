@@ -6,8 +6,10 @@ const useDarkMode = ( key, initialValue ) => {
     useEffect(()=>{
         if (darkMode){
             return document.querySelector('body').classList.add('dark-mode')
+            
         }else {
-            return document.querySelector('body').classList.remove('dark-mode')
+            return document.querySelector('body').classList.remove('dark-mode') 
+            
         }
     },[darkMode])
 
